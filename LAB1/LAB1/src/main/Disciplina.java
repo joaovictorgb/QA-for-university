@@ -9,7 +9,6 @@ public class Disciplina {
     private int cargaHoraria;
     private List<Aluno> alunosMatriculados;
     private String horário;
-    private Professor professor;
 
     public Disciplina(String nome, String codigo, int cargaHoraria, String horario) {
         this.nome = nome;
@@ -79,13 +78,6 @@ public class Disciplina {
         this.alunosMatriculados = alunosMatriculados;
     }
 
-	public Professor getProfessor() {
-		return professor;
-	}
-
-	public void setProfessor(Professor professor) {
-		this.professor = professor;
-	}
 
 	public String getHorário() {
 		return horário;

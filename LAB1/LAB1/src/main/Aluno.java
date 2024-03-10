@@ -30,7 +30,6 @@ public class Aluno {
         for (Disciplina disciplina : disciplinasMatriculadas) {
         	System.out.println();
             System.out.println("- " + disciplina.getNome() + " (" + disciplina.getCodigo() + ")\n" + disciplina.getHorário());
-            System.out.println();
         }
     }
 

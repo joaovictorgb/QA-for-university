@@ -37,6 +37,7 @@ public class ControleAcademico {
 	        while(escolha!=0) {
 	        	mostrarMenu();
 	        	escolha = entrada.nextInt();
+	        	System.out.println();
 	        	switch (escolha) {
 	        		case 1: 
 	        			System.out.println("Professores cadastrados: \n");
@@ -74,12 +75,12 @@ public class ControleAcademico {
 	    }    
 	    
 	    public static void mostrarMenu() {
-			System.out.println("Bem vindo ao controle acadêmico!");
-			System.out.println("Escolha as informações que deseja ver");
-			System.out.println("1 - Professores");
-			System.out.println("2 - Alunos");
-			System.out.println("3 - Disciplinas");
-			System.out.println("0 - Sair");
+			System.out.print("Bem vindo ao controle acadêmico!\n" +
+                    "Escolha as informações que deseja ver\n" +
+                    "1 - Professores\n" +
+                    "2 - Alunos\n" +
+                    "3 - Disciplinas\n" +
+                    "0 - Sair\n");
 	    }
 	    
 }
