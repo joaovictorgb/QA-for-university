@@ -19,16 +19,11 @@ public class Professor {
     public List<Disciplina> obterDisciplinasMinistradas() {
         return disciplinasMinistradas;
     }
-
     
-    public void dadosProfessor() {
-    	System.out.println("Nome: " + this.nome);
-		System.out.println("Disciplinas ministradas:");
-        List<Disciplina> disciplinas = this.obterDisciplinasMinistradas();
-        for (Disciplina disciplina : disciplinas) {
-            System.out.println("- " + disciplina.getNome() + " (" + disciplina.getCodigo() + ")\n" + disciplina.getHorário());
-            System.out.println();
-        }
+    public void removerDisciplina(Disciplina disciplina) {
+        if (this.obterDisciplinasMinistradas().contains(disciplina)) 
+        	this.obterDisciplinasMinistradas().remove(disciplina);
+        else System.out.println(this.getNome() + " não leciona nesta disciplina.");
     }
 
     // Getters e Setters

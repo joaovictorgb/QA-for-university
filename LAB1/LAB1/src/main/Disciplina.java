@@ -29,21 +29,6 @@ public class Disciplina {
     public int numeroDeAlunos() {
         return alunosMatriculados.size();
     }
-    
-    
-    public void dadosDisciplina() {
-    	System.out.println();
-    	System.out.println("Nome: " + this.nome);
-    	System.out.println("Código " + this.codigo);
-    	System.out.println("CH: " + this.cargaHoraria);
-    	System.out.println("Horário: "+ this.horário);
-    	System.out.println("Número de Alunos na disciplina: " + this.numeroDeAlunos());
-		System.out.println("Alunos matriculados:\n");
-        List<Aluno> alunos = this.obterAlunosMatriculados();
-        for (Aluno aluno : alunos) {
-            System.out.println("- " + aluno.getNome() + " (" + aluno.getMatricula() + ")");
-        }
-    }
 
     // Getters e Setters
     public String getNome() {

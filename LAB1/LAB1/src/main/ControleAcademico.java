@@ -1,4 +1,5 @@
 package main;
+import java.util.List;
 import java.util.Scanner;
 
 public class ControleAcademico {
@@ -41,26 +42,26 @@ public class ControleAcademico {
 	        	switch (escolha) {
 	        		case 1: 
 	        			System.out.println("Professores cadastrados: \n");
-	        			professor1.dadosProfessor();
-	        			professor2.dadosProfessor();
-	        			professor3.dadosProfessor();
+	        			dadosProfessor(professor1);
+	        			dadosProfessor(professor2);
+	        			dadosProfessor(professor3);
 	        			System.out.println("Pressione Enter para voltar");
 	        	        scanner.nextLine(); 
 	        			break;
 	        		case 2: 
 	        			System.out.println("Alunos cadastrados: \n");
-	        			aluno1.dadosAlunos();
-	        			aluno2.dadosAlunos();
-	        			aluno3.dadosAlunos();
+	        			dadosAlunos(aluno1);
+	        			dadosAlunos(aluno2);
+	        			dadosAlunos(aluno3);
 	        			System.out.println("Pressione enter para voltar");
 	        	        scanner.nextLine(); 
 	        			break;
 
 	        		case 3: 
 	        			System.out.println("Disciplinas cadastradas");
-	        			matematica.dadosDisciplina();
-	        			bancoDeDados.dadosDisciplina();
-	        			algoritmos.dadosDisciplina();
+	        			dadosDisciplina(matematica);
+	        			dadosDisciplina(bancoDeDados);
+	        			dadosDisciplina(algoritmos);
 	        			System.out.println("\nPressione enter para voltar");
 	        	        scanner.nextLine(); 
 	        			break;
@@ -81,6 +82,41 @@ public class ControleAcademico {
                     "2 - Alunos\n" +
                     "3 - Disciplinas\n" +
                     "0 - Sair\n");
+	    }
+	    
+	    public static void dadosAlunos(Aluno aluno) {
+	    	System.out.println("Nome: " + aluno.getNome());
+	    	System.out.println("Matrícula: " + aluno.getMatricula());
+			System.out.println("Disciplinas atendidas:");
+	        for (Disciplina disciplina : aluno.obterDisciplinasMatriculadas()) {
+	        	System.out.println();
+	            System.out.println("- " + disciplina.getNome() + " (" + disciplina.getCodigo() + ")\n" + disciplina.getHorário());
+	            System.out.println();
+	        }
+	    }
+	    
+	    public static void dadosProfessor(Professor professor) {
+	    	System.out.println("Nome: " + professor.getNome());
+			System.out.println("Disciplinas ministradas:");
+	        List<Disciplina> disciplinas = professor.obterDisciplinasMinistradas();
+	        for (Disciplina disciplina : disciplinas) {
+	            System.out.println("- " + disciplina.getNome() + " (" + disciplina.getCodigo() + ")\n" + disciplina.getHorário());
+	            System.out.println();
+	        }
+	    }
+	    
+	    public static void dadosDisciplina(Disciplina disciplina) {
+	    	System.out.println();
+	    	System.out.println("Nome: " + disciplina.getNome());
+	    	System.out.println("Código " + disciplina.getCodigo());
+	    	System.out.println("CH: " + disciplina.getCargaHoraria());
+	    	System.out.println("Horário: "+ disciplina.getHorário());
+	    	System.out.println("Número de Alunos na disciplina: " + disciplina.numeroDeAlunos());
+			System.out.println("Alunos matriculados:\n");
+	        List<Aluno> alunos = disciplina.obterAlunosMatriculados();
+	        for (Aluno aluno : alunos) {
+	            System.out.println("- " + aluno.getNome() + " (" + aluno.getMatricula() + ")");
+	        }
 	    }
 	    
 }

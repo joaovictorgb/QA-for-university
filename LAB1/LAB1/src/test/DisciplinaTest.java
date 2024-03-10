@@ -12,6 +12,7 @@ class DisciplinaTest {
 	Disciplina disciplina;
 	Aluno aluno1;
 	Aluno aluno2;
+	Aluno aluno3;
 	
 	@BeforeEach
 	public void setup() {
@@ -20,6 +21,7 @@ class DisciplinaTest {
         aluno2 = new Aluno("Ana Carolina", "20210002");
         disciplina.adicionarAluno(aluno1);
         disciplina.adicionarAluno(aluno2);
+        aluno3 = new Aluno("Felipe Carvalho", "20220002");
 	}
 	
     @Test
@@ -32,6 +34,8 @@ class DisciplinaTest {
     @Test
     void numeroDeAlunos() {
         assertEquals(2, disciplina.numeroDeAlunos());
+        disciplina.adicionarAluno(aluno3);
+        assertEquals(3, disciplina.numeroDeAlunos());
     }
     
     @Test 

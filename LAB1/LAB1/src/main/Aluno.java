@@ -22,15 +22,11 @@ public class Aluno {
     public List<Disciplina> obterDisciplinasMatriculadas() {
         return disciplinasMatriculadas;
     }
-
-    public void dadosAlunos() {
-    	System.out.println("Nome: " + this.nome);
-    	System.out.println("Matrícula: " + this.matricula);
-		System.out.println("Disciplinas atendidas:");
-        for (Disciplina disciplina : disciplinasMatriculadas) {
-        	System.out.println();
-            System.out.println("- " + disciplina.getNome() + " (" + disciplina.getCodigo() + ")\n" + disciplina.getHorário());
-        }
+    
+    public void removerDisciplina(Disciplina disciplina) {
+        if (this.obterDisciplinasMatriculadas().contains(disciplina)) 
+        	this.obterDisciplinasMatriculadas().remove(disciplina);
+        else System.out.println(this.getNome() + " não está matriculado nesta disciplina.");
     }
 
     // Getters e Setters
