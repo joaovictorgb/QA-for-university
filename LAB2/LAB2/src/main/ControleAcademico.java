@@ -6,11 +6,11 @@ import java.util.Collection;
 public class ControleAcademico {
 	private Collection<Disciplina> disciplinas;
 	private Collection<Turma> turmas;
-	
+
+
 	public ControleAcademico() {
 		this.disciplinas = new ArrayList<Disciplina>();
 		this.turmas = new ArrayList<Turma>();
-		
 	}
 	   public void adicionarDisciplina(String nome, String codigo, int cargaHoraria) throws Exception {
 		   Disciplina disciplina = new Disciplina( nome, codigo, cargaHoraria);
@@ -19,7 +19,6 @@ public class ControleAcademico {
 		   }
 		   else {
 			   throw new Exception("A disciplina já existe");
-		   
 		   }
 	   }
 	   
@@ -35,8 +34,7 @@ public class ControleAcademico {
 	   public Disciplina buscaDisciplina(String codigo) throws Exception {
 		   for(Disciplina disciplina : disciplinas) {
 			   if (disciplina.getCodigo().equals(codigo)) {
-				   Disciplina disciplinaAux = disciplina;
-				   return disciplinaAux;
+				   return disciplina;
 			   }
 		   }
 		return null;
@@ -81,8 +79,7 @@ public class ControleAcademico {
 	   public Turma buscaTurma(int id) throws Exception {
 		   for(Turma turma : turmas) {
 			   if (turma.getId()==id) {
-				   Turma turmaAux = turma;
-				   return turmaAux;
+				   return turma;
 			   }
 		   }
 		return null;
@@ -107,6 +104,8 @@ public class ControleAcademico {
 			  }
 		   
 	   }
+	   
+
 	   
 	   public void adicionarAlunos(int id, String nome, String matricula) throws Exception {
 		   Turma turma = buscaTurma(id);
@@ -136,5 +135,20 @@ public class ControleAcademico {
 		   if (turma==null) throw new Exception("Código de Turma inválido");
 		   turma.removerProfessor();
 	   }
-	   
+
+
+	public Collection<Turma> getTurmas() {
+		return turmas;
+	}
+	public void setTurmas(Collection<Turma> turmas) {
+		this.turmas = turmas;
+	}
+
+	public Collection<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+	public void setDisciplinas(Collection<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+
 }

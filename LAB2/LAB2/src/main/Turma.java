@@ -24,7 +24,6 @@ public class Turma {
 	public void addNovoAluno(Aluno aluno) throws Exception {
 		if (!alunos.contains(aluno)) alunos.add(aluno);
 		else throw new Exception("Aluno já está na turma.");
-	
 	}
 
 	public void removerAluno(String matricula) throws Exception {
@@ -32,8 +31,8 @@ public class Turma {
 	for (Aluno aluno : alunos) {
 		if (aluno.getMatricula().equals(alunoAux.getMatricula())) {
 			alunos.remove(aluno);
-			}
 			return;
+			}
 		}
 	 throw new Exception("Aluno não está na turma.");
 	}
