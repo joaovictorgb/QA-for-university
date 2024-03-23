@@ -8,5 +8,6 @@
 	<classpathentry kind="src" path="LAB-1/controle_academico/main/java/entidades"/>
 	<classpathentry excluding="controle/" kind="src" path="LAB-1/controle_academico/main/test/java"/>
 	<classpathentry kind="src" path="LAB-1/controle_academico/main/test/java/controle"/>
+	<classpathentry kind="src" path="LAB3/app"/>
 	<classpathentry kind="output" path="LAB-0/Triangle/bin"/>
 </classpath>
