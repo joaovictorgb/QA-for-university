@@ -8,7 +8,7 @@ public class Quadrado implements FigurasInterface {
 
     public Quadrado(double lado) throws FiguraException {
         if (lado <= 0) {
-            throw new FiguraException("Lado do quadrado não pode ser negativo ou zero.");
+            throw new FiguraException("Quadrado não pode ter lado negativo ou zero.");
         }
         this.lado = lado;
     }

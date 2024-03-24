@@ -9,7 +9,7 @@ public class Retangulo implements FigurasInterface {
 
     public Retangulo(double altura, double largura) throws FiguraException {
         if (altura <= 0 || largura <= 0) {
-            throw new FiguraException("Altura e largura devem ser positivas.");
+            throw new FiguraException("Altura e largura do Retangulo devem ser maiores que zero.");
         }
         this.altura = altura;
         this.largura = largura;

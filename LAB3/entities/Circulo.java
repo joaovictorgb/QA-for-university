@@ -15,7 +15,7 @@ public class Circulo implements FigurasInterface {
 
     @Override
     public Double calcularArea() {
-        return Math.PI * (this.raio * this.raio);
+        return Math.PI * (Math.pow(raio, 2));
     }
 
     @Override

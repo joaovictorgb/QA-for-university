@@ -7,18 +7,19 @@ public class BrincandoComAsFigurasGeometricas {
 
     public static void main(String[] args) {
         try {
-            FigurasGeometricas fig = new FigurasGeometricas(10, 5, 7, 25);
+            FigurasGeometricas fig = new FigurasGeometricas(10, -5, 7, 25);
 
             System.out.println(fig.getTodosPerimetros());
-            System.out.println(fig.areaDaFigura(FigurasGeometricas.R));
-            System.out.println(fig.areaDaFigura(-1)); // Testar com valor inválido
-            System.out.println(fig.areaDaFigura(2));
-            System.out.println(fig.areaDaFigura(1));
+            System.out.println(fig.areaDaFigura(FigurasGeometricas.tiposDeFigura.RETANGULO));
+            System.out.println(fig.areaDaFigura(FigurasGeometricas.tiposDeFigura.QUADRADO));
+            System.out.println(fig.areaDaFigura(FigurasGeometricas.tiposDeFigura.CIRCULO));
+            System.out.println(fig.areaDaFigura(FigurasGeometricas.tiposDeFigura.TODOS));
 
-            System.out.println("Figura 1: " + fig.toStringDaFigura(1));
-            System.out.println("Figura 0: " + fig.toStringDaFigura(0));
-            System.out.println("Figura -1: " + fig.toStringDaFigura(-1));
-            System.out.println("Figura 2: \n" + fig.toStringDaFigura(2));
+            System.out.println("Figura 1: " + fig.toStringDaFigura(FigurasGeometricas.tiposDeFigura.RETANGULO));
+            System.out.println("Figura 2: " + fig.toStringDaFigura(FigurasGeometricas.tiposDeFigura.QUADRADO));
+            System.out.println("Figura 3: " + fig.toStringDaFigura(FigurasGeometricas.tiposDeFigura.CIRCULO));
+            System.out.println("Figura 4: \n" + fig.toStringDaFigura(FigurasGeometricas.tiposDeFigura.TODOS));
+            
         } catch (FiguraException e) {
             System.out.println("Erro ao criar figura: " + e.getMessage());
         }

@@ -3,34 +3,41 @@ package entities;
 import exceptions.FiguraException;
 
 public class FigurasGeometricas {
-    public static final int R = -1;
-    public static final int Q = 0;
-    public static final int C = 1;
-    public static final int T = 2;
-
+	public enum tiposDeFigura{
+		QUADRADO,
+		CIRCULO,
+		RETANGULO,
+		TODOS
+	};
+	
     private Retangulo retangulo;
     private Quadrado quadrado;
     private Circulo circulo;
 
-    public FigurasGeometricas(double alturaQuadrado, double larguraQuadrado, double comprimentoLadoQuadrado,
-                              double raioCirculo) throws FiguraException {
-        this.retangulo = new Retangulo(alturaQuadrado, larguraQuadrado);
-        this.quadrado = new Quadrado(comprimentoLadoQuadrado);
-        this.circulo = new Circulo(raioCirculo);
+    public FigurasGeometricas(
+    		
+    	double alturaRetangulo, 
+    	double larguraRetangulo, 
+    	double comprimentoLadoQuadrado,                              
+    	double raioCirculo) 
+    			throws FiguraException {
+        	this.retangulo = new Retangulo(alturaRetangulo, larguraRetangulo);
+        	this.quadrado = new Quadrado(comprimentoLadoQuadrado);
+        	this.circulo = new Circulo(raioCirculo);
     }
 
-    public String areaDaFigura(int tipoDaFigura) throws FiguraException {
-        switch (tipoDaFigura) {
-            case R:
+    public String areaDaFigura(tiposDeFigura tipo) throws FiguraException {
+        switch (tipo) {
+            case RETANGULO:
                 return this.retangulo.calcularArea().toString();
 
-            case Q:
+            case QUADRADO:
                 return this.quadrado.calcularArea().toString();
 
-            case C:
+            case CIRCULO:
                 return this.circulo.calcularArea().toString();
 
-            case T:
+            case TODOS:
                 return this.getTodosAreas();
 
             default:
@@ -38,35 +45,35 @@ public class FigurasGeometricas {
         }
     }
 
-    public String toStringDaFigura(int tipoDaFigura) throws FiguraException {
-        switch (tipoDaFigura) {
-            case R:
+    public String toStringDaFigura(tiposDeFigura tipo) throws FiguraException {
+        switch (tipo) {
+            case RETANGULO:
                 return retangulo.toString();
-            case Q:
+            case QUADRADO:
                 return quadrado.toString();
 
-            case C:
+            case CIRCULO:
                 return circulo.toString();
 
-            case T:
+            case TODOS:
                 return this.getTodasFiguras();
             default:
                 throw new FiguraException();
         }
     }
 
-    public String PerimetroDaFigura(int tipoDaFigura) throws FiguraException {
-        switch (tipoDaFigura) {
-            case R:
+    public String perimetroDaFigura(tiposDeFigura tipo) throws FiguraException {
+        switch (tipo) {
+            case RETANGULO:
                 return this.retangulo.calcularPerimetro().toString();
 
-            case Q:
+            case QUADRADO:
                 return this.quadrado.calcularPerimetro().toString();
 
-            case C:
+            case CIRCULO:
                 return this.circulo.calcularPerimetro().toString();
 
-            case T:
+            case TODOS:
                 return this.getTodosPerimetros();
 
             default:
