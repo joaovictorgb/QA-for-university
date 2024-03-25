@@ -27,12 +27,12 @@ public class CirculoTest {
 
     @Test(expected = FiguraException.class)
     public void testCriarCirculoComRaioNegativo() throws FiguraException {
-        new Circulo(-1.0); 
+        new Circulo(-1); 
     }
 
     @Test(expected = FiguraException.class)
     public void testCriarCirculoComRaioZero() throws FiguraException {
-        new Circulo(0.0); 
+        new Circulo(0); 
     }
 
 }

@@ -26,6 +26,11 @@ public class FigurasGeometricas {
         	this.circulo = new Circulo(raioCirculo);
     }
 
+    public static FigurasGeometricas criarFiguras(double altura, double largura, double comprimento, double raio) throws FiguraException{
+        FigurasGeometricas fig = new FigurasGeometricas(altura, largura, comprimento, raio);
+        return fig;
+    }
+
     public String areaDaFigura(tiposDeFigura tipo) throws FiguraException {
         switch (tipo) {
             case RETANGULO:
