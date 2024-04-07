@@ -1,11 +1,9 @@
 package Test;
 
 import exception.ExcecaoFilme;
-import entidades.Filme;
-import entidades.Funcionario;
-import entities.Ator;
-import entities.Diretor;
-import interfaces.Funcao;
+import exception.ExcecaoPessoa;
+
+import entities.*;
 import org.junit.Before;
 import org.junit.Test;
 

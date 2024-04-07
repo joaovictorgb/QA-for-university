@@ -1,9 +1,11 @@
 package entities;
 
-import funcoes.Funcao;
+import interfaces.Funcao;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import exception.ExcecaoPessoa;
 
 public class Funcionario extends Pessoa {
     private List<Funcao> funcoes;

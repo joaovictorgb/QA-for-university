@@ -1,4 +1,5 @@
 package entities;
+import interfaces.Funcao;
 
 public class Cameraman implements Funcao {
     @Override

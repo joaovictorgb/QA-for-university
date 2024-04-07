@@ -1,5 +1,8 @@
+package app;
 import entities.*;
-
+import exception.ExcecaoFilme;
+import exception.ExcecaoPessoa;
+import interfaces.Funcao;
 
 import java.util.List;
 
@@ -22,7 +25,6 @@ public class ControleAcesso {
             diretorFilme.adicionarFuncao(new Diretor());
             Funcionario roteiristaFilme = new Funcionario("Roteirista 1");
             roteiristaFilme.adicionarFuncao(new Roteirista());
-
             Filme filme1 = new Filme("Filme 1", diretorFilme, roteiristaFilme);
 
             

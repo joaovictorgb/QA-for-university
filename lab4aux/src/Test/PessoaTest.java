@@ -1,7 +1,7 @@
 package Test;
 
 import exception.ExcecaoPessoa;
-import entidades.Pessoa;
+import entities.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

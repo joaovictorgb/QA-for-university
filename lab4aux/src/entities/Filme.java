@@ -1,9 +1,9 @@
 package entities;
 
-import funcoes.Funcao;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import exception.ExcecaoFilme;
 
 public class Filme {
     private String nome;

@@ -1,9 +1,7 @@
 package Test;
 
 import exception.ExcecaoPessoa;
-import entidades.Funcionario;
-import entities.Ator;
-import entities.Diretor;
+import entities.*;
 import interfaces.Funcao;
 import org.junit.Test;
 

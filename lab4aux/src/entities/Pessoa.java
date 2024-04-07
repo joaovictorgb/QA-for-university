@@ -1,5 +1,7 @@
 package entities;
 
+import exception.ExcecaoPessoa;
+
 public class Pessoa {
     private String nome;
 
