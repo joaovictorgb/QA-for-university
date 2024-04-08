@@ -1,10 +1,9 @@
 package app;
 
-import entities.Filme;
-import entities.Funcionario;
-import entities.Participacao;
+import entities.*;
 import exceptions.ExcecaoFilme;
 import exceptions.ExcecaoPessoa;
+import interfaces.Funcao;
 
 public class Controle {
 
@@ -41,5 +40,21 @@ public class Controle {
     
         }
         System.out.println();
+    }
+
+    public static Funcao ator(){
+        return new Ator();
+    }
+
+    public static Funcao diretor(){
+        return new Diretor();
+    }
+
+    public static Funcao cameraman(){
+        return new Cameraman();
+    }
+
+    public static Funcao roteirista(){
+        return new Roteirista();
     }
 }

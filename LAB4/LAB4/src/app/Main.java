@@ -3,23 +3,28 @@ package app;
 import entities.*;
 import exceptions.ExcecaoFilme;
 import exceptions.ExcecaoPessoa;
+import interfaces.Funcao;
 
 
 public class Main {
     public static void main(String[] args) {
         try {
+            Funcao ator = Controle.ator();
+            Funcao diretor = Controle.diretor();
+            Funcao cameraman = Controle.cameraman();
+            Funcao roteirista = Controle.roteirista();
             Funcionario pessoa1 = Controle.criarFuncionario("Maria");
             Funcionario pessoa2 = Controle.criarFuncionario("Pedro");
             Funcionario pessoa3 = Controle.criarFuncionario("Ana");
 
             Filme filme1 = Controle.criarFilme("Star Wars", "1977", "Ficção Cientifica");
-            filme1.adicionarFuncionario(pessoa1, new Ator());
-            filme1.adicionarFuncionario(pessoa2, new Roteirista());
-            filme1.adicionarFuncionario(pessoa2, new Ator());
-            filme1.adicionarFuncionario(pessoa3, new Ator());
+            filme1.adicionarFuncionario(pessoa1, ator);
+            filme1.adicionarFuncionario(pessoa2, roteirista);
+            filme1.adicionarFuncionario(pessoa2, ator);
+            filme1.adicionarFuncionario(pessoa3, ator);
             Filme filme2 = Controle.criarFilme("Senhor dos Aneis", "2001", "Aventura");
-            filme2.adicionarFuncionario(pessoa3, new Diretor());
-            filme2.adicionarFuncionario(pessoa1, new Cameraman());
+            filme2.adicionarFuncionario(pessoa3, diretor);
+            filme2.adicionarFuncionario(pessoa1, cameraman);
            
 
             Controle.informacoes(filme1);
