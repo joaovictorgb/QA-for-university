@@ -1,56 +1,41 @@
 package app;
-import entities.*;
+
+import entities.Ator;
+import entities.Diretor;
+import entities.Filme;
+import entities.Funcionario;
+import entities.Roteirista;
 import exceptions.ExcecaoFilme;
 import exceptions.ExcecaoPessoa;
-import interfaces.Funcao;
 
-import java.util.List;
 
 public class ControleAcesso {
     public static void main(String[] args) {
         try {
-            // Criação de funcionários
-            Funcionario pessoa1 = new Funcionario("Pessoa 1");
-            Funcionario pessoa2 = new Funcionario("Pessoa 2");
+            Funcionario ator1 = new Funcionario("Ator 1");
+            ator1.adicionarFuncao(new Ator());
+            Funcionario ator2 = new Funcionario("Ator 2");
+            ator2.adicionarFuncao(new Ator());
+            Funcionario diretor1 = new Funcionario("Diretor 1");
+            diretor1.adicionarFuncao(new Diretor());
+            Funcionario roteirista1 = new Funcionario("Roteirista 1");
+            roteirista1.adicionarFuncao(new Roteirista());
 
-            // Adiciona funções aos funcionários
-            pessoa1.adicionarFuncao(new Ator());
-            pessoa1.adicionarFuncao(new Cameraman());
-            pessoa2.adicionarFuncao(new Diretor());
-            pessoa2.adicionarFuncao(new Roteirista());
-            pessoa2.adicionarFuncao(new Ator());
+            Filme filme1 = new Filme("Filme 1", diretor1, roteirista1);
+            filme1.adicionarFuncionario(ator1);
+            filme1.adicionarFuncionario(ator2);
 
-            // Criação de um filme
-            Funcionario diretorFilme = new Funcionario("Diretor 1");
-            diretorFilme.adicionarFuncao(new Diretor());
-            Funcionario roteiristaFilme = new Funcionario("Roteirista 1");
-            roteiristaFilme.adicionarFuncao(new Roteirista());
-            Filme filme1 = new Filme("Filme 1", diretorFilme, roteiristaFilme);
-
-            
-            filme1.adicionarFuncionario(pessoa1);
-            filme1.adicionarFuncionario(pessoa2);
-
-            
-            System.out.println("Nome do Filme: " + filme1.getNome());
+            System.out.println("Informações do Filme:");
+            System.out.println("Nome: " + filme1.getNome());
             System.out.println("Diretor: " + filme1.getDiretor().getNome());
             System.out.println("Roteirista: " + filme1.getRoteirista().getNome());
             System.out.println("Elenco:");
-
             for (Funcionario funcionario : filme1.getElenco()) {
-                System.out.print(funcionario.getNome() + " - Funções: ");
-                List<Funcao> funcoes = funcionario.getFuncoes();
-                for (int i = 0; i < funcoes.size(); i++) {
-                    System.out.print(funcoes.get(i).getFuncao());
-                    if (i < funcoes.size() - 1) {
-                        System.out.print(", ");
-                    }
-                }
-                System.out.println();
+                System.out.println("- " + funcionario.getNome() + " (" + funcionario.getFuncoesAsString() + ")");
             }
 
         } catch (ExcecaoPessoa | ExcecaoFilme e) {
-            System.out.println("Erro ao criar pessoa ou filme: " + e.getMessage());
+            System.out.println("Erro: " + e.getMessage());
         }
     }
 }

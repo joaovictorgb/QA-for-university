@@ -55,14 +55,14 @@ public class FilmeTest {
     }
 
     @Test
-    public void testAdicionarFuncionario() {
+    public void testAdicionarFuncionario() throws ExcecaoFilme {
         filme.adicionarFuncionario(ator1);
         List<Funcionario> elenco = filme.getElenco();
         assertTrue(elenco.contains(ator1));
     }
 
     @Test
-    public void testGetElenco() {
+    public void testGetElenco() throws ExcecaoFilme {
         filme.adicionarFuncionario(ator1);
         List<Funcionario> elenco = filme.getElenco();
         assertNotNull(elenco);

@@ -1,11 +1,9 @@
 package entities;
 
+import exceptions.ExcecaoPessoa;
 import interfaces.Funcao;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import exceptions.ExcecaoPessoa;
 
 public class Funcionario extends Pessoa {
     private List<Funcao> funcoes;
@@ -16,12 +14,23 @@ public class Funcionario extends Pessoa {
     }
 
     public void adicionarFuncao(Funcao funcao) {
-        if (funcao != null) {
+        if (funcao != null && !funcoes.contains(funcao)) {
             funcoes.add(funcao);
         }
     }
 
     public List<Funcao> getFuncoes() {
         return funcoes;
+    }
+
+    public String getFuncoesAsString() {
+        StringBuilder sb = new StringBuilder();
+        for (Funcao funcao : funcoes) {
+            sb.append(funcao.getFuncao()).append(", ");
+        }
+        if (sb.length() > 0) {
+            sb.setLength(sb.length() - 2); // Remover a última vírgula e espaço
+        }
+        return sb.toString();
     }
 }
