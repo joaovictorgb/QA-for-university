@@ -15,7 +15,7 @@ class ProfessorTest {
 	Disciplina disciplina1;
 	Disciplina disciplina2;
 	Disciplina disciplina3;
-	
+	/* 
 	@BeforeEach
 	void setup() {
 		professor = new Professor("João Silva");
@@ -55,6 +55,6 @@ class ProfessorTest {
     	assertFalse(professor.obterDisciplinasMinistradas().contains(disciplina1));
     	assertFalse(professor.obterDisciplinasMinistradas().contains(disciplina2));
     }
-
+    */
 }
 

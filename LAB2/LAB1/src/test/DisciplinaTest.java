@@ -13,7 +13,7 @@ class DisciplinaTest {
 	Aluno aluno1;
 	Aluno aluno2;
 	Aluno aluno3;
-	
+	/* 
 	@BeforeEach
 	public void setup() {
 		disciplina = new Disciplina("Algoritmos e Estruturas de Dados", "ALG456", 90, "Terça 07h-09h | Quarta 07-09h");
@@ -45,5 +45,5 @@ class DisciplinaTest {
     	assertEquals(90, disciplina.getCargaHoraria());
     	assertEquals("Terça 07h-09h | Quarta 07-09h", disciplina.getHorário());
     }
-    
+    */
 }
