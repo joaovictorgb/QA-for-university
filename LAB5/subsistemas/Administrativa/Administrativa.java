@@ -8,14 +8,8 @@ public class Administrativa {
 
     public Administrativa() {
         // Agendar reunioes ficticias
-        for (int i = 0; i < 5; i++) {
             this.reunioesAgendadas.add(new Reuniao());
-        }
-
-        // Criar entrevistas ficticias
-        for (int i = 0; i < 5; i++) {
             this.entrevistasAgendadas.add(new Entrevista());
-        }
     }
 
     public String obterReunioesAgendadas() {

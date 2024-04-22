@@ -1,13 +1,11 @@
 package Almoxarifado;
 
-import java.util.Date;
-
 public class PedidosCompra {
     private int numeroPedido;
     private String fornecedor;
-    private Date dataPedido;
+    private String dataPedido;
 
-    public PedidosCompra(int numeroPedido, String fornecedor, Date dataPedido) {
+    public PedidosCompra(int numeroPedido, String fornecedor, String dataPedido) {
         this.numeroPedido = numeroPedido;
         this.fornecedor = fornecedor;
         this.dataPedido = dataPedido;

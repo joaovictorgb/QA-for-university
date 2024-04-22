@@ -2,12 +2,12 @@ package Professores;
 
 import java.util.Random;
 
-public class ProfessorDisciplinaTempoDeCasa {
+public class ProfessorDados {
     private String professorNome;
     private String disciplinaNome;
     private int tempoDeCasa;
 
-    public ProfessorDisciplinaTempoDeCasa() {
+    public ProfessorDados() {
         this.professorNome = gerarNomeProfessor();
         this.disciplinaNome = gerarNomeDisciplina();
         this.tempoDeCasa = gerarTempoDeCasa();
@@ -38,7 +38,7 @@ public class ProfessorDisciplinaTempoDeCasa {
 
     private int gerarTempoDeCasa() {
         Random random = new Random();
-        int tempo = random.nextInt(40);
+        int tempo = random.nextInt(15);
 
         return tempo;
     }

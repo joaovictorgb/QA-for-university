@@ -22,6 +22,7 @@ public class TestRdm {
     public void testAdicionarNota() {
         rdm.adicionarNota("Matemática", 8.5);
         rdm.adicionarNota("História", 7.0);
+        assertEquals(8.5, rdm.obterNota("Matemática"), 0.1);
     }
 
     @Test

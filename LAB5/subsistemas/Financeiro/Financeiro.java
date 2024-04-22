@@ -32,11 +32,11 @@ public class Financeiro {
             despesas += pagamento.getSalario();
         }
 
-        return "\n-> Balanço de contas em 30/09/2023: \nReceitas: R$" + receitas + " \nDespesas: R$" + despesas + ".";
+        return "\n-> Balanço de contas em 22/04/2024: \nReceitas: R$" + receitas + " \nDespesas: R$" + despesas + ".";
     }
 
     public String obterFolhaPagamento() {
-        String folhaPagamento = "\n\n-> Folha de pagamento de outubro de 2023\n";
+        String folhaPagamento = "\n\n-> Folha de pagamento de abril de 2024\n";
 
         for (Pagamento pagamento : this.pagamentos) {
             folhaPagamento += pagamento.getFuncionarioNome() + ": R$" + pagamento.getSalario() + "\n";

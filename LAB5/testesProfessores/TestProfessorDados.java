@@ -6,15 +6,15 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import Professores.ProfessorDisciplinaTempoDeCasa;
+import Professores.ProfessorDados;
 
-public class TestProfessorDisciplinaTempoDeCasa {
+public class TestProfessorDados {
 
-    private ProfessorDisciplinaTempoDeCasa professor;
+    private ProfessorDados professor;
 
     @Before
     public void setUp() {
-        professor = new ProfessorDisciplinaTempoDeCasa();
+        professor = new ProfessorDados();
     }
 
     @Test

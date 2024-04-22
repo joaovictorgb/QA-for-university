@@ -7,24 +7,24 @@ import Almoxarifado.Almoxarifado;
 import Infraestrutura.Infraestrutura;
 
 public class SIG {
-    private Administrativa administrativo;
-    private Financeiro financeiro;
-    private Professores professores;
-    private Alunos alunos;
-    private Almoxarifado almoxarifado;
-    private Infraestrutura infraestrutura;
+    public Administrativa administrativo;
+    public Financeiro financeiro;
+    public Professores professores;
+    public Alunos alunos;
+    public Almoxarifado almoxarifado;
+    public Infraestrutura infraestrutura;
 
     public SIG() {
         administrativo = new Administrativa();
         financeiro = new Financeiro();
         professores = new Professores();
-        alunos = new Alunos(null, 0);
+        alunos = new Alunos("Nome1", 12345);
         almoxarifado = new Almoxarifado();
         infraestrutura = new Infraestrutura();
     }
 
     public String obterInformacoesAdministrativas() {
-        String formatarSaida = "\n=-=-=-=| Informações Administrativas |=-=-=-=-=\n";
+        String formatarSaida = "\n------| Informações Administrativas |-------\n";
         formatarSaida += administrativo.obterReunioesAgendadas();
         formatarSaida += administrativo.obterEntrevistas();
 
@@ -32,7 +32,7 @@ public class SIG {
     }
 
     public String obterInformacoesFinanceiras() {
-        String formatarSaida = "=-=-=-=| Informações Financeiras |=-=-=-=-=\n";
+        String formatarSaida = "------| Informações Financeiras |-------\n";
         formatarSaida += financeiro.obterBalancoContas();
         formatarSaida += financeiro.obterFolhaPagamento();
 
@@ -40,7 +40,7 @@ public class SIG {
     }
 
     public String obterInformacoesProfessores() {
-        String formatarSaida = "=-=-=-=| Informações dos Professores |=-=-=-=-=\n";
+        String formatarSaida = "------| Informações dos Professores |-------\n";
         formatarSaida += professores.obterAlocacaoPorDisciplina();
         formatarSaida += professores.obterTempoDeCasa();
 
@@ -48,14 +48,22 @@ public class SIG {
     }
 
     public String obterInformacoesAlunos() {
-        return alunos.obterHistorico() + "\n" + alunos.obterRDM();
+        String formatarSaida = "------| Informações dos Alunos |-------\n";
+        formatarSaida += alunos.obterHistorico();
+        formatarSaida += alunos.obterRDM();
+        return formatarSaida;
     }
 
     public String obterInformacoesAlmoxarifado() {
-        return almoxarifado.obterEstoque() + "\n" + almoxarifado.obterPedidosCompra();
+        System.out.println("------| Informações do Almoxarifado |-------\n");
+        String formatarSaida = almoxarifado.obterPedidosCompra();
+        almoxarifado.obterEstoque().imprimirEstoque();
+        return formatarSaida;
     }
 
     public String obterInformacoesInfraestrutura() {
-        return infraestrutura.obterAlocacaoSalas();
+        String formatarSaida = "------| Informações de Infraestrutura |-------\n";
+        formatarSaida += infraestrutura.obterAlocacaoSalas();
+        return formatarSaida;
     }
 }

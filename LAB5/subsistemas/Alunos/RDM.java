@@ -29,7 +29,7 @@ public class RDM {
         if (totalDisciplinas > 0) {
             return somaNotas / totalDisciplinas;
         } else {
-            return 0.0; // Evita divisão por zero se o aluno não tiver notas ainda.
+            return 0.0; 
         }
     }
 }

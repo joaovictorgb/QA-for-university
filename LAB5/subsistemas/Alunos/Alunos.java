@@ -23,7 +23,7 @@ public class Alunos {
 
     public String obterHistorico() {
         String historicoAluno = "Histórico do Aluno: " + nome + "\n";
-        historicoAluno += historico.obterHistorico(); // Supondo que o método obterHistorico retorne uma String.
+        historicoAluno += historico.obterHistorico(); 
     
         return historicoAluno;
     }
@@ -33,6 +33,10 @@ public class Alunos {
         rdmAluno += "RDM: " + rdm.calcularRDM() + "\n";
     
         return rdmAluno;
+    }
+
+    public int getMatricula() {
+        return matricula;
     }
     
 }

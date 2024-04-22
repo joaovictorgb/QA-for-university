@@ -1,7 +1,6 @@
 package Almoxarifado;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Almoxarifado {
@@ -24,7 +23,7 @@ public class Almoxarifado {
     }
     
     // Registrar um pedido de compra.
-    public void registrarPedidoCompra(int numeroPedido, String fornecedor, Date dataPedido) {
+    public void registrarPedidoCompra(int numeroPedido, String fornecedor, String dataPedido) {
         PedidosCompra pedido = new PedidosCompra(numeroPedido, fornecedor, dataPedido);
         pedidosCompraList.add(pedido);
     }
@@ -38,7 +37,8 @@ public class Almoxarifado {
         return builder.toString();
     }
 
-    public String obterEstoque() {
-        return null;
+    public Estoque obterEstoque() {
+        return estoque;
     }
+
 }

@@ -3,12 +3,12 @@ package Professores;
 import java.util.ArrayList;
 
 public class Professores {
-    ArrayList<ProfessorDisciplinaTempoDeCasa> professores = new ArrayList<ProfessorDisciplinaTempoDeCasa>();
+    ArrayList<ProfessorDados> professores = new ArrayList<ProfessorDados>();
 
     public Professores() {
         // Gerar professores fictícios
         for (int i = 0; i < 5; i++) {
-            ProfessorDisciplinaTempoDeCasa professor = new ProfessorDisciplinaTempoDeCasa();
+            ProfessorDados professor = new ProfessorDados();
             this.professores.add(professor);
         }
     }
@@ -17,7 +17,7 @@ public class Professores {
         StringBuilder resultado = new StringBuilder();
         resultado.append("\n-> Alocação de professores por disciplina\n");
 
-        for (ProfessorDisciplinaTempoDeCasa professor : this.professores) {
+        for (ProfessorDados professor : this.professores) {
             resultado.append(professor.getProfessorNome() + " alocado para lecionar "
                     + professor.getDisciplinaNome() + ".\n");
         }
@@ -29,7 +29,7 @@ public class Professores {
         StringBuilder resultado = new StringBuilder();
         resultado.append("\n-> Tempo de casa dos professores\n");
 
-        for (ProfessorDisciplinaTempoDeCasa professor : this.professores) {
+        for (ProfessorDados professor : this.professores) {
             resultado.append(professor.getProfessorNome() + " tem " + professor.getTempoDeCasa()
                     + " anos de tempo de casa.\n");
         }

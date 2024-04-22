@@ -1,5 +1,8 @@
 package testesAlunos;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,9 +18,8 @@ public class TestAluno {
    }
 
    @Test
-   public void testAdicionarDisciplinaConcluida() {
-      aluno.adicionarDisciplinaConcluida("Matemática");
-      aluno.adicionarDisciplinaConcluida("História");
+   public void testAluno(){
+      assertEquals(12345, aluno.getMatricula());
    }
 
    @Test
@@ -25,14 +27,8 @@ public class TestAluno {
       aluno.adicionarDisciplinaConcluida("Matemática");
       aluno.adicionarDisciplinaConcluida("História");
       aluno.obterHistorico();
-      // Você pode adicionar mais verificações aqui com base na saída impressa
+      assertTrue(aluno.obterHistorico().contains("Matemática"));
+      assertTrue(aluno.obterHistorico().contains("História"));
    }
 
-   @Test
-   public void testImprimirRDM() {
-      aluno.adicionarNota("Matemática", 8.5);
-      aluno.adicionarNota("História", 7.0);
-      aluno.obterRDM();
-      // Você pode adicionar mais verificações aqui com base na saída impressa
-   }
 }

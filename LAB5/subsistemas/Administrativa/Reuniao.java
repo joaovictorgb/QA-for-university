@@ -5,7 +5,7 @@ import java.util.Date;
 public class Reuniao {
     private Date data;
 
-    Reuniao() {
+    public Reuniao() {
         this.data = new Date();
     }
 
