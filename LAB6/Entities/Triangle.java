@@ -1,32 +1,42 @@
 package Entities;
 
 
-class Triangle {
-    static int isosceles = 0;
-    static int equilatero = 0;
-    static int retangulo = 0;
-    String tipo;
+public class Triangle {
+    private static Triangle isosceles = null;
+    private static Triangle equilatero = null;
+    private static Triangle retangulo = null;
+    private String tipo;
     
-    public Triangle(String tipo) {
-        if (tipo.equals("Retangulo") && Triangle.retangulo == 0) {
-            this.tipo = tipo;
-            Triangle.retangulo++;
+    private Triangle(String tipo)  {
+        this.tipo=tipo;
+    }
 
-        } else if (tipo.equals("Isosceles") && Triangle.isosceles == 0) {
-            this.tipo = tipo;
-            Triangle.isosceles++;
+    public static Triangle getInstance(String tipo) throws ExcecaoInstancia{
 
-        } else if (tipo.equals("Equilatero") && Triangle.equilatero == 0) {
-            this.tipo = tipo;
-            Triangle.equilatero++;
+        if (tipo == "Retangulo") {
+            if(Triangle.retangulo == null){
+                return Triangle.retangulo= new Triangle(tipo);
+            } else throw new ExcecaoInstancia("Já existe uma instância de Triângulo Retângulo");
+        } 
 
-        }        
+        else if (tipo == "Isosceles"){
+            if(Triangle.isosceles == null) {
+                return Triangle.isosceles= new Triangle(tipo);
+        }  else throw new ExcecaoInstancia("Já existe uma instância de Triângulo Isósceles");
+
+        } else if (tipo == "Equilatero"){
+            if(Triangle.equilatero == null) {
+                return Triangle.equilatero= new Triangle(tipo);
+        }     else throw new ExcecaoInstancia("Já existe uma instância de Triângulo Equilátero");   
+    }
+
         else {
-            throw new RuntimeException();}
+            throw new ExcecaoInstancia("Tipo inválido de instância");
+        }
     }
     
     @Override
     public String toString() {
-        return "Triângulo do tipo "+this.tipo+" criado";
+        return "Triângulo do tipo "+ this.tipo +" criado";
     }
 }
