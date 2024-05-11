@@ -35,7 +35,7 @@ public class Main {
 		visitorMax.visitaCirculo(circulo);
 		System.out.println("Raio do Circulo após ser maximizado: " + circulo.getRaio());
 		visitorMax.visitaRetangulo(retangulo);
-		System.out.println("Largura e Altura do retangulo após ser maximizado: " + retangulo.getLargura() + " | " + retangulo.getAltura());
+		System.out.println("Largura e Altura do retangulo após ser maximizado: " + retangulo.getLargura() + " / " + retangulo.getAltura());
 	
 		
 	}
