@@ -10,7 +10,16 @@ public class Trapezio implements ElementoConcretoIF {
 	private int lado1;
 	private int lado2;
 	
-	public Trapezio(int baseMenor, int baseMaior, int altura, int lado1, int lado2) {
+	public Trapezio(int baseMenor, int baseMaior, int altura, int lado1, int lado2) throws ExcecaoEntidade {
+
+		if (baseMenor < 1 || baseMaior < 1 || altura < 1 || lado1 < 1 || lado2 < 1 ) {
+            throw new ExcecaoEntidade("Medidas inválidas");
+        }
+		if (baseMenor == baseMaior) {
+            throw new ExcecaoEntidade("Medidas formam trapézio inválido");
+        }
+
+
 		this.baseMenor = baseMenor;
 		this.baseMaior = baseMaior;
 		this.altura = altura;

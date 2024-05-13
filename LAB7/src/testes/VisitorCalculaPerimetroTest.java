@@ -6,8 +6,8 @@ import org.junit.Test;
 import entidades.*;
 import visitors.*;
 
-public class VisitorCalculaAreaTest {
-    VisitorIF ca;
+public class VisitorCalculaPerimetroTest {
+    VisitorIF cp;
     Retangulo r;
     Circulo c;
     Trapezio t;
@@ -15,7 +15,7 @@ public class VisitorCalculaAreaTest {
 
     @Before
     public void setup() throws ExcecaoEntidade {
-        ca = new VisitorCalculaArea();
+        cp = new VisitorCalculaPerimetro();
         r = new Retangulo(2, 4);
         c = new Circulo(2);
         t = new Trapezio(2, 4, 3, 2, 2);
@@ -23,22 +23,22 @@ public class VisitorCalculaAreaTest {
     }
 
     @Test
-    public void testAreaRetangulo() {
-        assertEquals(8, ca.visitaRetangulo(r), 0.1);
+    public void testPerimetroRetangulo() {
+        assertEquals(12, cp.visitaRetangulo(r), 0.1);
     }
 
     @Test
-    public void testAreaCirculo() {
-        assertEquals(12.56, ca.visitaCirculo(c), 0.01);
+    public void testPerimetroCirculo() {
+        assertEquals(12.56, cp.visitaCirculo(c), 0.01);
     }
 
     @Test
-    public void testAreaTrapezio() {
-        assertEquals(9.0, ca.visitaTrapezio(t), 0.1);
+    public void testPerimetroTrapezio() {
+        assertEquals(10, cp.visitaTrapezio(t), 0.1);
     }
 
     @Test
-    public void testAreaTriangulo() {
-        assertEquals(6.0, ca.visitaTriangulo(tr), 0.1);
+    public void testPerimetroTriangulo() {
+        assertEquals(7, cp.visitaTriangulo(tr), 0.1);
     }
 }

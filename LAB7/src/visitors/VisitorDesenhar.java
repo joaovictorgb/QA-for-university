@@ -15,7 +15,7 @@ public class VisitorDesenhar implements VisitorIF {
 	}
 
 	public double visitaCirculo(Circulo c) {
-		System.out.println("Circulo desenhado");
+		System.out.println("Círculo desenhado");
 		return 0;
 	}
 

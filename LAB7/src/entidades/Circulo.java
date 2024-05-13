@@ -6,7 +6,8 @@ public class Circulo implements ElementoConcretoIF {
 	
 	private double raio;
 	
-	public Circulo(double r) {
+	public Circulo(double r) throws ExcecaoEntidade {
+		if (r<1) throw new ExcecaoEntidade("Raio inválido");
 		this.raio = r;
 	}
 	

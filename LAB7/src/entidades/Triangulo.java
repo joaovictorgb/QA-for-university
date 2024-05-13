@@ -9,7 +9,14 @@ public class Triangulo {
 	private int lado1;
 	private int lado2;
 	
-	public Triangulo(int base, int altura, int lado1, int lado2) {
+	public Triangulo(int base, int altura, int lado1, int lado2) throws ExcecaoEntidade {
+		if (base <= 0 || lado1 <= 0 || lado2 <= 0) {
+            throw new ExcecaoEntidade("Lado do triãngulo inválido");
+        }
+        if (lado1 >= lado2 + base || lado2 >= lado1 + base || base >= lado1 + lado2) {
+            throw new ExcecaoEntidade("Medidas fornecidas não formam um triângulo válido.");
+        }
+
 		this.base = base;
 		this.altura = altura;
 		this.lado1 = lado1;
