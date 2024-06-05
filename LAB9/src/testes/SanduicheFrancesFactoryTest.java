@@ -11,7 +11,7 @@ public class SanduicheFrancesFactoryTest {
     @Test
     public void testeCriarSanduicheFrances() {
         SanduicheFrancesFactory factory = new SanduicheFrancesFactory();
-        Sanduiche sanduiche = factory.criarSanduiche();
+        Sanduiche sanduiche = factory.preparar();
 
         assertNotNull(sanduiche);
         assertEquals("Pão Francês, Queijo Cheddar, Presunto de Frango, Ovo de Capoeira, Tomate", sanduiche.toString());

@@ -11,16 +11,26 @@ public class Sanduiche {
     protected Presunto presunto;
     protected Ovo ovo;
     protected Tomate tomate = new Tomate();
-
-    public void preparar(Pao pao, Queijo queijo, Presunto presunto, Ovo ovo) {
-    	this.pao = pao;
-    	this.queijo = queijo;
-    	this.presunto = presunto;
-    	this.ovo = ovo;
-    };
     
     @Override
     public String toString() {
         return pao + ", " + queijo + ", " + presunto + ", " + ovo + ", " + tomate;
     }
+
+    public void setPao(Pao pao) {
+        this.pao = pao;
+    }
+
+    public void setQueijo(Queijo queijo) {
+        this.queijo = queijo;
+    }
+
+    public void setPresunto(Presunto presunto) {
+        this.presunto = presunto;
+    }
+
+    public void setOvo(Ovo ovo) {
+        this.ovo = ovo;
+    }
+
 }

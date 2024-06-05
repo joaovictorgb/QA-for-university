@@ -4,5 +4,10 @@ import entidades.Sanduiche;
 
 public interface SanduicheFactory {
 	SanduicheFactory criarFactory();
-    Sanduiche criarSanduiche();
+    Pao criarPao();
+    Queijo criarQueijo();
+    Presunto criarPresunto();
+    Ovo criarOvo();
+    Sanduiche preparar();
+
 }

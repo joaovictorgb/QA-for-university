@@ -10,18 +10,34 @@ public class SanduicheIntegralFactory implements SanduicheFactory {
 	public SanduicheFactory criarFactory() {
 		return new SanduicheIntegralFactory();
 	}
-
-	@Override
-	public Sanduiche criarSanduiche() {
-		Pao PaoIntegral = new PaoIntegral();
-    	Queijo QueijoMussarela = new QueijoMussarela();
-    	Presunto PresuntoPeru = new PresuntoPeru();
-    	Ovo OvoCapoeira = new OvoCapoeira();
-    	Sanduiche sanduiche = new Sanduiche();
-    	sanduiche.preparar(PaoIntegral, QueijoMussarela, PresuntoPeru, OvoCapoeira);
-        return sanduiche;
+	
+	@Override 
+	public Pao criarPao(){
+		return new PaoIntegral();
 	}
-	
-	
+
+	@Override 
+	public Queijo criarQueijo(){
+		return new QueijoMussarela();
+	}
+
+	@Override 
+	public Presunto criarPresunto(){
+		return new PresuntoPeru();
+	}
+
+	@Override 
+	public Ovo criarOvo(){
+		return new OvoCapoeira();
+	}
+
+	public Sanduiche preparar() {
+		Sanduiche sanduiche = new Sanduiche();
+		sanduiche.setPao(criarPao());
+		sanduiche.setPresunto(criarPresunto());
+		sanduiche.setQueijo(criarQueijo());
+		sanduiche.setOvo(criarOvo());
+		return sanduiche;
+    }
    
 }

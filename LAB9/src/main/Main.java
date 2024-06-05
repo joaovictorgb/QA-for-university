@@ -13,7 +13,7 @@ public class Main {
         };
         
         for (SanduicheFactory factory : factories) {
-            Sanduiche sanduiche = factory.criarSanduiche();
+            Sanduiche sanduiche = factory.preparar();
             System.out.println(sanduiche);
         }
     }
